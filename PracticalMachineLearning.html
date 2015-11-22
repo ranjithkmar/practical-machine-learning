@@ -92,8 +92,8 @@ library(doParallel)</code></pre>
 <pre class="r"><code>set.seed(2048)
 options(warn=-1)</code></pre>
 <p>First, I loaded the data both from the provided training and test data provided by COURSERA. Some values contained a “#DIV/0!” that I replaced with an NA value.</p>
-<pre class="r"><code>training_data &lt;- read.csv(&quot;pml-training.csv&quot;, na.strings=c(&quot;#DIV/0!&quot;) )
-evaluation_data &lt;- read.csv(&quot;pml-testing.csv&quot;, na.strings=c(&quot;#DIV/0!&quot;) )</code></pre>
+<pre class="r"><code>training_data &lt;- read.csv(&quot;./pml-training.csv&quot;, na.strings=c(&quot;#DIV/0!&quot;) )
+evaluation_data &lt;- read.csv(&quot;./pml-testing.csv&quot;, na.strings=c(&quot;#DIV/0!&quot;) )</code></pre>
 <p>I also casted all columns 8 to the end to be numeric.</p>
 <pre class="r"><code>for(i in c(8:ncol(training_data)-1)) {training_data[,i] = as.numeric(as.character(training_data[,i]))}
 
